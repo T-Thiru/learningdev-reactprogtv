@@ -1,24 +1,23 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import Logo from "./components/Logo";
+import Programme from "./components/Programme";
+import programme from "./programme.json";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+    <>
+      <header>
+        <Logo />
       </header>
-    </div>
+      <main className="wrapper">
+        {programme.map((element) => {
+          return <Programme prog={element} />;
+        })}
+      </main>
+      <footer>
+        <p>Made at le Reacteur By Thiru - 2022</p>
+      </footer>
+    </>
   );
 }
 
